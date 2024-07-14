@@ -1,0 +1,42 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.stButton > button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.stButton > button:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+.stTextInput > div > input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.stSidebar {
+    background-color: #2E8B57;
+    color: white;
+}
+
+.stSidebar .stFileUploader {
+    background-color: #3CB371;
+    color: white;
+}
