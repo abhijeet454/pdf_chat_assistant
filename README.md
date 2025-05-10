@@ -15,7 +15,7 @@ PDF Chat Assistant is an interactive tool built with Streamlit, enabling users t
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/pdf-chat-assistant.git
+   git clone https://github.com/abhijeet454/pdf_chat_assistant.git
    cd pdf-chat-assistant
    ```
 
