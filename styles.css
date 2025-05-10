@@ -1,42 +1,107 @@
 /* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f6; /* Light gray background */
     color: #333;
 }
 
-.stButton > button {
-    background-color: #4CAF50;
+/* --- General Streamlit Elements --- */
+.stApp {
+    /* Add global app styles if needed */
+}
+
+/* --- Sidebar --- */
+.stSidebar {
+    background-color: #ffffff; /* White sidebar */
+    border-right: 1px solid #e0e0e0; /* Subtle border */
+    padding: 1rem;
+}
+
+.stSidebar .stFileUploader label {
+    font-weight: 500;
+    color: #333;
+}
+
+.stSidebar .stButton>button {
+    background-color: #FF4B4B; /* Streamlit Red for reset */
     color: white;
     border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem; /* Slightly more rounded */
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease;
 }
 
-.stButton > button:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid #4CAF50;
+.stSidebar .stButton>button:hover {
+    background-color: #E03C3C;
+    transform: translateY(-1px);
 }
 
-.stTextInput > div > input {
-    border: 1px solid #ccc;
-    padding: 10px;
-    font-size: 16px;
+.stSidebar .stMarkdown caption {
+    font-size: 0.8rem;
+    color: #666;
 }
 
-.stSidebar {
-    background-color: #2E8B57;
+/* --- Main Content Area --- */
+.stChatInput > div > div > textarea {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.stChatInput > div > div > textarea:focus {
+    border-color: #007bff; /* Primary color on focus */
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* --- Chat Messages --- */
+div[data-testid="chatMessage"] {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+/* User messages */
+div[data-testid="chatMessage"]:has(div[data-testid="chatAvatarIcon-user"]) {
+    background-color: #007bff; /* Primary blue for user */
     color: white;
+    margin-left: auto; /* Align to right */
+    max-width: 75%;
+    border-bottom-right-radius: 0.125rem; /* Slightly different corner for "speech bubble" */
 }
 
-.stSidebar .stFileUploader {
-    background-color: #3CB371;
-    color: white;
+/* Assistant messages */
+div[data-testid="chatMessage"]:has(div[data-testid="chatAvatarIcon-assistant"]) {
+    background-color: #e9ecef; /* Light gray for assistant */
+    color: #333;
+    margin-right: auto; /* Align to left */
+    max-width: 75%;
+    border-bottom-left-radius: 0.125rem; /* "Speech bubble" */
+}
+
+div[data-testid="chatMessage"] p {
+    margin-bottom: 0; /* Remove default paragraph margin inside chat messages */
+}
+
+/* Styling for status box */
+div[data-testid="stStatus"] {
+    border-radius: 0.375rem;
+}
+
+/* Styling for spinner text (if possible through CSS, sometimes Streamlit controls this heavily) */
+.stSpinner > div > div {
+    /* color: #007bff !important; */ /* Example: change spinner text color */
+}
+
+/* Markdown headers in chat */
+div[data-testid="chatMessage"] h1,
+div[data-testid="chatMessage"] h2,
+div[data-testid="chatMessage"] h3 {
+    color: inherit; /* Inherit color from the chat bubble */
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
 }
